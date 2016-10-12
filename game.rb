@@ -28,6 +28,10 @@ class Game
   def get_decks
     self.player_deck = Deck.new
     self.computer_deck = Deck.new
+    self.player_score = 0
+    self.computer_score = 0
+    self.wars = 0
+    self.rounds = 0
   end
 
   def shuffle_decks
@@ -36,10 +40,7 @@ class Game
   end
 
   def game_play
-    self.player_score = 0
-    self.computer_score = 0
-    self.wars = 0
-    self.rounds = 0
+
 
     until player_deck.empty?
       if player_deck.draw.value.to_i > computer_deck.draw.value.to_i
@@ -50,6 +51,7 @@ class Game
         self.rounds += 1
       else
         self.wars += 1
+        self.rounds += 1
       end
     end
   end

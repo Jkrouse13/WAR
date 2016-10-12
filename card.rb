@@ -14,7 +14,7 @@ class Card
     if face == "K"
       self.value = 13
     elsif face == "Q"
-      self.value == 12
+      self.value = 12
     elsif face == "J"
       self.value = 11
     elsif face == "A"
@@ -25,11 +25,11 @@ class Card
   end
 
   def > (other)
-    value > other.value
+    value.to_i > other.value.to_i
   end
 
   def < other
-    value < other.value
+    value.to_i < other.value.to_i
   end
 
 
@@ -38,11 +38,13 @@ end
 
 faces =   %w(A 2 3 4 5 6 7 8 9 10 J Q K)
 
+
+
 # suits =   %w(clubs diamonds hearts spades)
 
-# card1 = Card.new(7, "Clubs")
-#
-# card2 = Card.new("J", "Hearts")
+# card1 = Card.new("Q", "Clubs")
+# #
+# card2 = Card.new("K", "Hearts")
 #
 # card3 = Card.new("A", "Spades")
 #

@@ -30,9 +30,14 @@ class Deck
   def empty?
     card_holder.empty?
   end
+
+  def length
+    card_holder.length
+  end
 end
 
 # doozie = Deck.new
+# puts doozie.length
 #
 # puts doozie.inspect
 #
