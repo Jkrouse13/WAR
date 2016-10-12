@@ -34,6 +34,12 @@ class Deck
   def length
     card_holder.length
   end
+
+  def push(stuff)
+    card_holder.push(stuff)
+  end
+
+
 end
 
 # doozie = Deck.new

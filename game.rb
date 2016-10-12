@@ -40,9 +40,10 @@ class Game
   end
 
   def game_play
-    until player_deck.empty?
-      game_action
-    end
+    52.times {game_action}
+    # until player_deck.empty?
+    #   game_action
+    # end
   end
 
   def game_action
@@ -52,9 +53,13 @@ class Game
     if player_card > computer_card
       self.player_score += 1
       self.rounds += 1
+      self.player_deck.push(computer_card)
+      self.player_deck.push(player_card)
     elsif player_card < computer_card
       self.computer_score += 1
       self.rounds += 1
+      self.computer_deck.push(computer_card)
+      self.computer_deck.push(player_card)
     else
       self.wars += 1
       self.rounds += 1
