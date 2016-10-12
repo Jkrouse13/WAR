@@ -40,19 +40,24 @@ class Game
   end
 
   def game_play
-
-
     until player_deck.empty?
-      if player_deck.draw.value.to_i > computer_deck.draw.value.to_i
-        self.player_score += 1
-        self.rounds += 1
-      elsif player_deck.draw.value.to_i < computer_deck.draw.value.to_i
-        self.computer_score += 1
-        self.rounds += 1
-      else
-        self.wars += 1
-        self.rounds += 1
-      end
+      game_action
+    end
+  end
+
+  def game_action
+    player_card = player_deck.draw
+    computer_card = computer_deck.draw
+
+    if player_card > computer_card
+      self.player_score += 1
+      self.rounds += 1
+    elsif player_card < computer_card
+      self.computer_score += 1
+      self.rounds += 1
+    else
+      self.wars += 1
+      self.rounds += 1
     end
   end
 
